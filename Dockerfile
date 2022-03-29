@@ -56,7 +56,9 @@ RUN dpkg-reconfigure locales
 RUN sudo apt-get update && sudo apt-get install -y obs-studio
 
 RUN wget https://download.foldingathome.org/releases/public/release/fahcontrol/debian-stable-64bit/v7.6/fahcontrol_7.6.21-1_all.deb
+RUN wget https://download.foldingathome.org/releases/public/release/fahclient/debian-stable-64bit/v7.6/fahclient_7.6.21_amd64.deb
 RUN dpkg -i ./fahclient_7.6.21_amd64.deb
+RUN dpkg -i ./fahcontrol_7.6.21-1_all.deb
 
 COPY . /app
 RUN chmod +x /app/conf.d/websockify.sh
